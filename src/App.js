@@ -6,7 +6,7 @@ class App extends Component {
     super();
     this.state = { count: 0 }
   };
-
+ 
 //se crea la funcion primero, que es la que va a realizar el conteo
   count(event) {
     this.setState({
