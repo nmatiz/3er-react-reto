@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = { count: 0 }
+  };
+
+//se crea la funcion primero, que es la que va a realizar el conteo
+  count(event) {
+    this.setState({
+      count: event.target.value.length
+    });
+  }
+//En el render se pinta la pagina, y en el onChange, se captura lo que va cambiandp
+  render() {
+    return (
+      <div className="container">
+        <textarea rows="3" onChange={this.count.bind(this)}></textarea>
+        <div className="counter">{this.state.count} caracteres</div>
+      </div>
+    );
+  }
 }
 
 export default App;
