@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <div className="container">
         <textarea rows="3" onChange={this.contar.bind(this)}></textarea>
-        <div className="counter">{this.state.contar} caracteres</div>
+        <div className="counter">{this.state.contar}</div>
       </div>
     );
   }
