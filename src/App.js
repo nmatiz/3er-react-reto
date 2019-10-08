@@ -4,21 +4,21 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
-    this.state = { count: 0 }
+    this.state = { contar: 0 }
   };
  
 //se crea la funcion primero, que es la que va a realizar el conteo
-  count(event) {
+  contar(event) {
     this.setState({
-      count: event.target.value.length
+      contar: event.target.value.length
     });
   }
 //En el render se pinta la pagina, y en el onChange, se captura lo que va cambiandp
   render() {
     return (
       <div className="container">
-        <textarea rows="3" onChange={this.count.bind(this)}></textarea>
-        <div className="counter">{this.state.count} caracteres</div>
+        <textarea rows="3" onChange={this.contar.bind(this)}></textarea>
+        <div className="counter">{this.state.contar} caracteres</div>
       </div>
     );
   }
